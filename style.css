@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Khand:wght@300;400;500&display=swap");
+
+/* font-family: 'MuseoModerno', cursive; */
+
+:root {
+  --factor: 7px;
+  --box-color: #1abc9c;
+  --b-radius: 40%;
+  --red: #ff4757;
+  --orange: orange;
+  --green: #2ed573;
+  --blue: #45aaf2;
+  --black: #353b48;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(44, 44, 44);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+.todo {
+  width: 380px;
+  height: 520px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  background: rgb(219, 219, 219);
+}
+
+.todo-header {
+  height: 30%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.todo-header h1 {
+  text-align: center;
+  font-family: "MuseoModerno", cursive;
+}
+
+.add-todo {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  /* background: orange; */
+}
+
+.btn {
+  width: 120px;
+  height: 30px;
+
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-family: "Lato";
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #000000;
+  border-radius: 10px;
+
+  transition: all 0.15s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  box-shadow: 0px -1px 2.5px rgba(0, 0, 0, 0.3);
+}
+
+.signup-btn {
+  background: #f3f3f3;
+  border: 2px solid #000000;
+}
+
+.add {
+  background: #12cbc4;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Fira Code";
+
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  word-spacing: -3px;
+  background: rgb(219, 219, 219);
+  transition: all 0.25s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.form-input:focus {
+  background: rgb(230, 230, 230);
+}
+
+.form-input::placeholder {
+  font-size: 16px;
+  word-spacing: -3px;
+  font-family: "Fira Code";
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* ------- CSS for custom radio buttons ------- */
+
+.importance {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  /* background: rgba(0, 0, 0, 0.3); */
+}
+
+.options {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.custom-radio-btn {
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  margin-right: 10px;
+
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.orange {
+  background: var(--orange);
+}
+
+.green {
+  background: var(--green);
+}
+
+.blue {
+  background: var(--blue);
+}
+
+.black {
+  background: var(--black);
+}
+.checkmark {
+  top: 50%;
+  left: 50%;
+  display: block;
+
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  border-radius: 10px;
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all 250ms cubic-bezier(0.4, 0.25, 0.3, 1);
+}
+
+.checkmark:hover {
+  opacity: 0.8;
+}
+
+input[type="radio"]:checked + .checkmark {
+  opacity: 1;
+  box-shadow: 0 0 0 2px rgb(219, 219, 219), 0 0 2px 4px rgb(0, 0, 0, 0.5);
+}
+
+/* ------- CSS for todos ------- */
+
+.todo-body {
+  height: 65%;
+  width: 100%;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+.todo-body::-webkit-scrollbar {
+  width: 0px;
+}
+.todo-body::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: #3d3d3d;
+}
+.todo-body::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 5px;
+  background: #787878;
+}
+
+.todo-body ul {
+  padding: 10px;
+}
+
+.todo-body ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 7.5px;
+  list-style: none;
+  word-spacing: -3px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background: #cccccc;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.todo-body ul li span::selection {
+  background: transparent;
+}
+
+.one {
+  border-left: 7px solid var(--orange);
+}
+.two {
+  border-left: 7px solid var(--green);
+}
+.three {
+  border-left: 7px solid var(--blue);
+}
+.four {
+  border-left: 7px solid var(--black);
+}
+
+/* ------- CSS for checkbox ------- */
+
+.cblabel input {
+  display: none;
+}
+
+.check {
+  /* margin: 10px; */
+  cursor: pointer;
+  position: relative;
+  padding: calc(var(--factor) / 4);
+  width: calc(var(--factor) * 3);
+  height: calc(var(--factor) * 3);
+
+  border-radius: var(--b-radius);
+  border: calc(var(--factor) / 2.1) solid var(--red);
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  display: block;
+  position: absolute;
+
+  /*   background: var(--box-color); */
+  border-radius: var(--b-radius);
+  width: calc(var(--factor) * 1.7);
+  height: calc(var(--factor) * 1.7);
+  transform: translate(-50%, -50%);
+}
+
+.cblabel input:checked + .check .center {
+  background: var(--red);
+}
