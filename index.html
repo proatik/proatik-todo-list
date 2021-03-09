@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="icon" href="./images/two.png" type="image/png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo">
+        <div class="todo-header">
+          <h1>Todo List</h1>
+          <div class="add-todo">
+            <input
+              class="form-input"
+              id="text-input"
+              type="text"
+              placeholder="Add Your Todo"
+              maxlength="30"
+            />
+            <div class="importance">
+              <div class="options">
+                <label class="custom-radio-btn">
+                  <input type="radio" name="importance" value="one" checked />
+                  <span class="checkmark orange"></span>
+                </label>
+
+                <label class="custom-radio-btn">
+                  <input type="radio" name="importance" value="two" />
+                  <span class="checkmark green"></span>
+                </label>
+
+                <label class="custom-radio-btn">
+                  <input type="radio" name="importance" value="three" />
+                  <span class="checkmark blue"></span>
+                </label>
+                <label class="custom-radio-btn">
+                  <input type="radio" name="importance" value="four" />
+                  <span class="checkmark black"></span>
+                </label>
+              </div>
+              <button class="btn add">ADD TODO</button>
+            </div>
+          </div>
+        </div>
+        <div class="todo-body">
+          <ul id="todos"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
